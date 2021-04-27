@@ -155,14 +155,24 @@ span {
     display: none;
   }
   .checkIn{
-    float: left;
+    display: inline;
   }
   .checkOut{
-    float: left;
+    display: inline;
+
   }
   #favButton{
-    float: left;
+    display: inline;
 
+
+  }
+  .parkInfo{
+    float: none;
+    margin: none;
+    width: 100%;
+  }
+  .parkPicture{
+  display: none;
   }
 }
 
