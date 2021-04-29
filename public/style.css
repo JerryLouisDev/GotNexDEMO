@@ -1,0 +1,459 @@
+body {
+  background-image: url(img/ball.jpeg);
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: auto;
+    width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  font-family: norwester;
+}
+
+body {
+  /* padding-top:19px; */
+  word-wrap: break-word;
+}
+h1{
+    font-family: norwester;
+    color: rgb(250, 240, 220);
+
+}
+h2{
+    font-family: norwester;
+    color: rgb(250, 240, 220);
+
+}
+h3{
+    font-family: norwester;
+    color: rgb(250, 240, 220);
+
+}
+#logo{
+  width: 100px;
+  height: auto;
+}
+
+nav img {
+  width: 170px;
+  height: 200px;
+  margin: 0px 50px 0px 0px;
+  cursor: pointer;
+}
+
+nav {
+  width: 94%;
+  height: 15%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 20px;
+  background: transparent;
+  padding: 10px 25px;
+  outline: none;
+  cursor: pointer;
+  color: rgb(250, 240, 220);
+  font-size: 20px;
+}
+
+img {
+  height: 53vh;
+  width: 57vh;
+}
+
+.fa-trash::before {
+  content: "\f014";
+}
+.fa-bars{
+  display: block;
+  width: 25px;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+.container {
+  padding: 0%;
+}
+
+.col-sm-6{
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(250, 240, 220);
+  outline: none;
+  font-family: norwester;
+
+}
+#login{
+margin: 0% 40%;
+}
+  .jumbotron small{
+    font-size: 2.7rem;
+  }
+.jumbotron {
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(250, 240, 220);
+  outline: none;
+  font-family: norwester;
+    /* position: absolute; */
+  /* top: 50%;
+  left: 8%;
+  transform: translate(-58%);
+  z-index: 2; */
+}
+
+.jumbotron h2 {
+  font-family: norwester;
+    font-weight: bolder;
+}
+
+.jumbotron h3 {
+  font-family: norwester;
+    font-weight: bolder;
+}
+
+.jumbotron h1 {
+  font-size: 90px;
+  font-family: norwester;
+    font-weight: bolder;
+  /* text-align: left; */
+}
+.sideBar{
+  width: 50px;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#hamBar{
+  color: white;
+  height: 25px;
+  width: 25px;
+  margin: 40px auto 0;
+  cursor: pointer;
+}
+
+#mapid {
+  height: 300vh;
+  border: 1px solid black;
+}
+#profile{
+  color:white;
+}
+#parkPage{
+  color:white;
+}
+
+/* basketball movements================================================ */
+
+.balls img{
+  width: 50px;
+  height: auto;
+  animation: bubble 7s linear infinite;
+}
+
+.balls{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+position: absolute;
+bottom: -70px;
+}
+#topBall{
+  bottom: 2px;
+}
+
+@keyframes bubble {
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+
+.balls img:nth-child(1){
+  animation-delay: 1s;
+  width:30px;
+}
+.balls img:nth-child(2){
+  animation-delay: 2.2s;
+  width:35px;
+
+}
+.balls img:nth-child(3){
+  animation-delay: 1.3s;
+
+}
+.balls img:nth-child(4){
+  animation-delay: 1.5s;
+  width:45px;
+  display: none;
+
+}
+.balls img:nth-child(5){
+  animation-delay: 1.9s;
+  width:32px;
+
+}
+.balls img:nth-child(6){
+  animation-delay: 2.5s;
+  width:35px;
+
+}
+.balls img:nth-child(7){
+  animation-delay: 2.8s;
+  width:50px;
+
+}
+
+
+/* endbasketball movements================================================ */
+
+span {
+  color: black;
+}
+.parkInfo{
+  width: 25vw;
+  height: 51vh;
+  margin-left: auto;
+  margin-right: 3vw;
+  border: 1px solid white;
+  float: left;
+}
+.parkPicture{
+  width: 25vw;
+  height: 51vh;
+  margin-left: 3vw;
+  margin-right: auto;
+  border:1px solid white;
+  float: left;
+}
+li{
+list-style: none;
+}
+.parkphoto{
+  width: 100%;
+  height: inherit;
+}
+.numberOfHoopers{
+  color: white;
+  text-decoration: none;
+  font-size: medium;
+}
+.checkInTimes > span{
+  color: white;
+}
+.parkInfo h3 span{
+  color: white;
+}
+#favButton{
+  background: inherit;
+  border: none;
+
+}
+#fp{
+  font-family: norwester;
+  color: rgb(250, 240, 220);
+
+}
+#fp:hover{
+  color: black;
+}
+.fa{
+  color: rgb(250, 240, 220);
+
+}
+.fas{
+  color: rgb(250, 240, 220);
+
+}
+.fa:hover {
+  color: black;
+
+}
+.parkInfo span{
+  color: rgb(250, 240, 220);
+
+}
+
+/* ===================favPage======================== */
+.favBox li a{
+  color: white;
+}
+.favBox li a:hover{
+  text-decoration: none;
+}
+/* ===================favPage======================== */
+@media only screen and (max-width: 532px){
+/* ===========index, login, signup, profileTwo========== */
+  .balls img{
+    display: none;
+  }
+  .btn{
+    width: 23vw;
+  }
+  .fa{
+    color: rgb(250, 240, 220);
+
+  }
+  .fas{
+    color: rgb(250, 240, 220);
+
+  }
+  .fa:hover {
+    color: black;
+
+  }
+  #anchorfav{
+    width: 40vw;
+  }
+
+    #fasBall{
+    display: none;
+  }
+  .checkIn{
+    display: inline;
+  }
+  .checkOut{
+    display: inline;
+
+  }
+  #favButton{
+    display: inline;
+
+  }
+  .parkInfo{
+    float: none;
+    margin: none;
+    width: 100%;
+  }
+  .parkPicture{
+  display: none;
+  }
+  /* ===========index, login, signup, profileTwo========== */
+  /* ===========ParkTwo========== */
+  .parkInfo{
+    background-color: rgba(0,0,0,.45);
+    border-radius: 20px;
+  }
+  .parkInfo h2, h3{
+    text-align: center;
+  }
+  .parkInfo h3 p{
+  color: white;
+ }
+  .parkInfo p, ul, li{
+    text-align: center;
+  }
+  .parkInfo p, ul{
+    padding: inherit;
+  }
+  .parkInfo span{
+    display: none;
+  }
+
+
+  /* ===========ParkTwo========== */
+
+}
+
+@media (min-width:533px) and (max-width:900px){
+/* ======parkTwoPAge====== */
+.checkIn{
+  display: inline;
+}
+.checkOut{
+  display: inline;
+}
+.saveParkFav{
+  display: inline;
+}
+.parkInfo{
+  width: 45%;
+}
+.parkPicture{
+  width: 45%;
+  border-radius: 20px;
+  border: none;
+}
+.parkPicture img{
+  border-radius: inherit;
+}
+
+.parkInfo{
+  background-color: rgba(0,0,0,.45);
+  border-radius: 20px;
+}
+.parkInfo h2, h3{
+  text-align: center;
+}
+.parkInfo p, ul, li{
+  text-align: center;
+}
+.parkInfo p, ul{
+  padding: inherit;
+}
+.parkInfo span{
+  display: none;
+}
+/* ======parkTwoPAge====== */
+}
+
+@media (min-width:900px) and (max-width:2000px){
+  /* ======parkTwoPAge====== */
+  .checkIn{
+    display: inline;
+  }
+  .checkOut{
+    display: inline;
+  }
+  .saveParkFav{
+    display: inline;
+  }
+  .parkInfo{
+    width: 45%;
+  }
+  .parkPicture{
+    width: 45%;
+    border-radius: 20px;
+    border: none;
+  }
+  .parkPicture img{
+    border-radius: inherit;
+  }
+
+  .parkInfo{
+    background-color: rgba(0,0,0,.45);
+    border-radius: 20px;
+  }
+  .parkInfo{
+    background-color: rgba(0,0,0,.45);
+    border-radius: 20px;
+  }
+  .parkInfo h2, h3{
+    text-align: center;
+  }
+  .parkInfo p, ul, li{
+    text-align: center;
+  }
+  .parkInfo p, ul{
+    padding: inherit;
+  }
+
+
+}

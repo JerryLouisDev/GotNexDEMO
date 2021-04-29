@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Favorites</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="/image/x-icon" href="/img/logo.ico">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+</head>
+
+<body>
+  <nav>
+    <a href="/"><img id="logo" src="/img/logo.png" alt="GotNEX Logo"></a>
+    <div>
+      <button class="btn btn-default btn-sm" onclick="goBack()">Go Back</button>
+
+      <a href="/logout" class="btn btn-default btn-sm"><span class="fa fa-user"></span>Logout</a>
+
+    </div>
+  </nav>
+  <div class="container" id="parkPage">
+
+    <div class="page-header text-center">
+      <h1><span class="fas fa-basketball-ball"></span> Your Favorite Parks <span class="fas fa-basketball-ball"></span></h1>
+    </div>
+    <br><br>
+
+    <div class="favContainer">
+
+      <div class="favBox">
+        <ul>
+          <% for(var i=0; i<favs.length; i++) {%>
+          <li><a href="/parkTwo/<%=favs[i].parkid %>"><%=favs[i].parkname%></a>
+          </li>
+        </ul>
+        <% } %>
+
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+    <script>
+    function goBack() {
+  window.history.back();
+}
+    </script>
+
+</body>
+
+</html>
