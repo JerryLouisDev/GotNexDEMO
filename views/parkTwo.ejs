@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>GotNEX</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="shortcut icon" type="/image/x-icon" href="/img/logo.ico">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+</head>
+<% function formatAMPM(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+} %>
+<body>
+  <nav>
+    <a href="/"><img id="logo" src="/img/logo.png" alt="GotNEX Logo"></a>
+    <div>
+      <a href="/FavoritePark" id="anchorfav" id="anchorFavTwo"class="btn btn-default btn-sm"><button class="fas fa-star" id="favButton"type="button" name="button"><span id="fp"> Favorite Parks</span></button></a>
+      <a href="/logout" class="btn btn-default btn-sm"><span class="fa fa-user"></span>Logout</a>
+
+    </div>
+  </nav>
+  <div class="container" id="parkPage">
+
+    <div class="page-header text-center">
+      <h1><span id="fasBall" class="fas fa-basketball-ball"></span> <%=park.name%> </h1>
+      <!-- <a href="/checkin/<%=park._id%>"><button id="checkIn"type="button" name="CheckInButton">Check In</button></a> -->
+      <form class="checkIn" action="/checkin/<%=park.id%>" method="post">
+        <button class="parkButton"type="submit" name="button">Check In</button>
+      </form>
+      <form class="checkOut" action="/checkout/<%=park.id%>" method="post">
+        <button class="parkButton" id="checkOut"type="submit" name="CheckOutButton">Check Out</button>
+      </form>
+      <form class="" action="/parkFavorites" method="post" >
+        <input type="hidden" name="parkID" value="<%=park.id%>">
+        <input type="hidden" name="parkname" value="<%=park.name%>">
+        <button class="parkButton" class="saveParkFav" type="submit" name="saveParkFav">Save Park</button>
+      </form>
+
+
+    </div>
+    <br><br>
+    <div class="parkInfo">
+
+
+      <h2>Park Address<span>:</span></h2>
+      <p><%=park.location.formattedAddress%></p>
+      <p>Local Username: <%=user.local.username%></p>
+      <h3>Number of Hoopers<span>:</span> <p><%=checkins.length%></p></h3>
+
+
+      <h3>UserName</h3>
+      <ul>
+        <% for(var i=0; i<checkins.length; i++) {%>
+          <li class="numberOfHoopers"><%=checkins[i].username%>: @ <%=formatAMPM(checkins[i].timestamp)%>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+
+    <div class="parkPicture">
+    <%  if(park.photos.groups.length > 0){ %>
+      <img class="parkphoto" src="<%= park.photos.groups[0].items[0].prefix + 300 + park.photos.groups[0].items[0].suffix%>" alt="<%=park.name%>">
+    <%}else{%>
+        <img class="parkphoto" src="/img/default.jpeg" alt="defaultPic">
+    <%}%>
+
+    </div>
+
+  </div>
+
+  <script src="/main.js" ></script>
+  <!-- <script src="/parkTwo.js" ></script> -->
+  <script>
+
+  </script>
+
+</body>
+
+</html>
