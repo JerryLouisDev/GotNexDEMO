@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>GotNEX</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+</head>
+<body>
+
+  <nav id="profileEJS">
+    <a href="/"><img id="logo" src="img/logo.png" alt="GotNEX Logo"></a>
+
+    <div>
+      <a href="/logout" class="btn btn-default btn-sm"><span class="fa fa-user"></span> Logout</a>
+      <a href="/FavoritePark" id="anchorfav" id="anchorFavTwo"class="btn btn-default btn-sm"><button class="fas fa-star" id="favButton"type="button" name="button"><span id="fp"> Favorite Parks</span></button></a>
+
+    </div>
+  </nav>
+  <div class="balls" id="topBall">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+    <img src="img/basketball.png" alt="">
+  </div>
+
+<div class="container">
+
+    <div class="page-header text-center" id="profile">
+        <h1> GotNEX </h1>
+        <br><br>
+        <h2> Hello, <%=user.local.username%></h2>
+        <small>What Park We Going to?</small>
+        <br><br>
+        <!-- <input type="text" name="" value="" placeholder="Enter Park">
+        <button type="button" name="button">Search</button>
+        <br><br>
+        <a href="/park"><button type="button" name="CheckInButton">Check In</button></a> -->
+    </div>
+
+    <div id="mapid"></div>
+
+
+</div>
+
+<script src="map.js"></script>
+<script>
+<% for(var i=0; i<parks.length; i++) {%>
+  let marker<%=i%> = L.marker([<%= parks[i].venue.location.lat%>, <%=parks[i].venue.location.lng%>]).addTo(mymap)
+  marker<%=i%>.bindPopup("<a href='/parkTwo/<%= parks[i].venue.id %>'><%= parks[i].venue.name %></a>").openPopup();
+    <% } %>
+</script>
+
+</body>
+</html>
