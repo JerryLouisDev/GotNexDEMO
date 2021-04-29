@@ -30,8 +30,8 @@ app.get('/foursquare', isLoggedIn,function(req, res){
       url: 'https://api.foursquare.com/v2/venues/explore',
       method: 'GET',
       qs: {
-        client_id: '0EIP22C3OKX4Q22BFUQFV0KROYVGN5SN2HLOANCQGJ5MNIFF',
-        client_secret: 'WPON4AR2AURBGSDDLQWDV05UN0WEQZSKPRIZLMJUWPKKJWUM',
+        client_id: 'DWVIBKCMNH35VOIXC5JYASR4LKROVO0OTPUQVDTMGHSWOXQQ',
+        client_secret: 'YG2ZUTVTTFEKDYB3KEC0QLZFRFU5JDFDJMWCARNDJ5W4L0RK',
         ll: '42.305,-71.088',
         categoryId: '4bf58dd8d48988d1e1941735',
         v: '20210401',
